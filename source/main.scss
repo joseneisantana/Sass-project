@@ -1,5 +1,6 @@
 @use'config/reset';
 @use'config/variaveis';
+@use'sass:math';
 
 @mixin elementoForm($margin:16px){
 padding: 8px;
@@ -8,6 +9,12 @@ padding: 8px;
     margin-bottom: $margin;
 }
 
+@function  pixelPareEm($alvoEmPixel,  $contextoEmPixel:  16px){
+
+   @return math.div($alvoEmPixel,  $contextoEmPixel)+em;
+
+
+}
 body{
     background-color: #f0ecec;
 }
@@ -33,9 +40,10 @@ header{
     align-items: center;
     justify-content: center;
     max-width: 760px;
+    margin:auto;
     
     h2{
-        font-size: 48px;
+        font-size:  pixelPareEm(48px);
         text-align: center;
 
     }
@@ -74,5 +82,10 @@ header{
         
 }
 
+}
+@media screen and (max-width: variaveis.$mobile) {
+    .container {
+        max-width: 80%;
+}
 }
 
