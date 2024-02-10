@@ -76,6 +76,9 @@ header{
                font-size: 18px;
              font-weight: bold;
          
+             &:hover{
+                background-color: lighten(variaveis.$corSecundaria, 15%);
+             }
 
         }
 
